@@ -27,6 +27,8 @@ tracts_regs <- left_join(tracts_regs, census_14) %>%
 
 saveRDS(tracts_regs, "temp/tr_census.rds")
 
+tracts_regs <- readRDS("temp/tr_census.rds")
+
 onep <- tracts_regs %>% 
   group_by(GEOID) %>% 
   filter(row_number() == 1) %>% 
